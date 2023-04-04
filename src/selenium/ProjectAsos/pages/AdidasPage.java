@@ -29,23 +29,23 @@ public class AdidasPage {
         System.out.println("The price of the item is "+prodPrice);
 
     }
-public void getPrices (){
-    List<WebElement> prices =driver.findElements(By.className("price_CMH3V"));
-    for(WebElement prodPriceFromElem:prices) {
-        String textPrice = prodPriceFromElem.getText();
+    public void getPrices (){
+        List<WebElement> prices =driver.findElements(By.className("price_CMH3V"));
+        for(WebElement prodPriceFromElem:prices) {
+            String textPrice = prodPriceFromElem.getText();
 
-        int index = textPrice.indexOf(".");
-        String priceNumber = textPrice.substring(1,index);
-        int priceAsInt = Integer.parseInt(priceNumber);
-        System.out.println("The price of item is "+priceNumber);
+            int index = textPrice.indexOf(".");
+            String priceNumber = textPrice.substring(1,index);
+            int priceAsInt = Integer.parseInt(priceNumber);
+            System.out.println("The price of item is "+ priceAsInt);
+
+        }
 
     }
 
-}
-
-public void getProduct (){
+    public void getProduct (){
         String prodName = product.getText();
-    System.out.println("The name of item is "+prodName);
+        System.out.println("The name of item is "+prodName);
 
 
     }

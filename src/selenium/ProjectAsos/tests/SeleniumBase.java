@@ -3,9 +3,6 @@ package selenium.ProjectAsos.tests;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-
-import java.time.Duration;
-
 public class SeleniumBase {
     public ChromeDriver seleniumInit(String url) {
         System.out.println("Starting...");
@@ -16,14 +13,13 @@ public class SeleniumBase {
 
         WebDriverManager.chromedriver().setup();
         ChromeDriver driver = new ChromeDriver(options);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
         driver.get(url);
         return driver;
     }
-
     public void seleniumClose(ChromeDriver driver) {
+
         driver.close();
     }
-
 }
