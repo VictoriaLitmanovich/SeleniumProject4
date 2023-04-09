@@ -1,7 +1,9 @@
 package selenium.ProjectAsos.tests;
+
 import org.openqa.selenium.chrome.ChromeDriver;
 import selenium.ProjectAsos.pages.AdidasPage;
 import selenium.ProjectAsos.pages.OlaplexPage;
+
 public class TestAsos {
     public static void main(String[] args) throws InterruptedException {
         SeleniumBase base = new SeleniumBase();
@@ -11,7 +13,6 @@ public class TestAsos {
 
         olaplex.clickOnMenuBtn();
         olaplex.Favourite();
-        Thread.sleep(3000); //sleep necessary to continue the test
         olaplex.searchAdidas("Adidas Gazelle Bold");
         Thread.sleep(3000); //sleep necessary to continue the test
         adidas.getPrice();

@@ -7,33 +7,38 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
+
 public class AdidasPage {
     private WebDriver driver;
     @FindBy(className = "price_CMH3V")
     WebElement price;
-    @FindBy (className = "productDescription_sryaw")
+    @FindBy(className = "productDescription_sryaw")
     WebElement product;
-    public AdidasPage(WebDriver driver){
+
+    public AdidasPage(WebDriver driver) {
         this.driver = driver;
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
+
     public void getPrice() {
         String prodPrice = price.getText();
-        System.out.println("The price of the item is "+prodPrice);
+        System.out.println("The price of the item is " + prodPrice);
     }
-    public void getPrices (){
-        List<WebElement> prices =driver.findElements(By.className("price_CMH3V"));
-        for(WebElement prodPriceFromElem:prices) {
+
+    public void getPrices() {
+        List<WebElement> prices = driver.findElements(By.className("price_CMH3V"));
+        for (WebElement prodPriceFromElem : prices) {
             String textPrice = prodPriceFromElem.getText();
 
             int index = textPrice.indexOf(".");
-            String priceNumber = textPrice.substring(1,index);
+            String priceNumber = textPrice.substring(1, index);
             int priceAsInt = Integer.parseInt(priceNumber);
-            System.out.println("The price of item is "+ priceAsInt);
+            System.out.println("The price of item is " + priceAsInt);
         }
     }
-    public void getProduct (){
+
+    public void getProduct() {
         String prodName = product.getText();
-        System.out.println("The name of item is "+prodName);
+        System.out.println("The name of item is " + prodName);
     }
 }
