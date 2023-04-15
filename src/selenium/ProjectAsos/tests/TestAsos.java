@@ -14,7 +14,6 @@ public class TestAsos {
         olaplex.clickOnMenuBtn();
         olaplex.Favourite();
         olaplex.searchAdidas("Adidas Gazelle Bold");
-        Thread.sleep(3000); //sleep necessary to continue the test
         adidas.getPrice();
         adidas.getProduct();
         adidas.getPrices();
